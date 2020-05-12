@@ -1,16 +1,20 @@
 "use strict"
 
 function asteriscIt(n) {
-    let skaiciai = n.join('');
-    
-    
+    if (typeof n =='number') {
+        n = ''+ n;
+    } if (typeof n == "object"){
+         n = n.join('');
+    }
+     let skaicius = '';
+ for ( let i = 0;i < n.length; i++){
+     skaicius += n[i];
+     if (n[i] % 2 == 0 && n[i+1] % 2 == 0) {
+         skaicius +=  '*';
+     } 
+ }   
+    return skaicius;
+ }
 
-
-
-
-return skaiciai;
-
- };
-
- console.log(asteriscIt([1, 4, 64, 68, 67, 23, 1]), '14*6*4*6*8*67231');
- console.log(asteriscIt(5312708), '531270*8');
+ console.log(asteriscIt(14646867231), '14*6*4*6*8*67231');
+ 
